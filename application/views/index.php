@@ -1,0 +1,3 @@
+<?php
+// apakah kamu tahoo?
+?>
