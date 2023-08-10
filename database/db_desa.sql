@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Jul 27, 2023 at 03:55 PM
--- Server version: 5.7.33
--- PHP Version: 7.4.19
+-- Host: 127.0.0.1
+-- Generation Time: Aug 10, 2023 at 11:22 AM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 7.1.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -69,7 +70,8 @@ CREATE TABLE `tb_album` (
 --
 
 INSERT INTO `tb_album` (`id`, `nama`, `tanggal`, `userid`, `count`, `cover`) VALUES
-(8, 'Kegiatan Masyarakat', '2023-07-07 09:11:17', 0, 5, 'c90029fad7a7a08ed2976c9a2661afe1.jpeg');
+(8, 'Kegiatan Masyarakat', '2023-07-07 09:11:17', 0, 5, 'c90029fad7a7a08ed2976c9a2661afe1.jpeg'),
+(9, 'Fasilitas', '2023-07-30 00:49:15', 11, 1, '4ba53ee822d35a08176b1a65bfef498f.jpeg');
 
 -- --------------------------------------------------------
 
@@ -220,19 +222,15 @@ CREATE TABLE `tb_form` (
 --
 
 INSERT INTO `tb_form` (`id`, `tb_user_penduduk_id`, `nik`, `name`, `religion`, `marital_status`, `letter_category`, `no_hp`, `gender`, `pob`, `dob`, `job`, `message`, `address`, `photo`, `isChange`, `created_at`, `warga_negara`, `melengkapi_persyaratan`, `nama_ibu`, `nama_ayah`, `hari_meninggal`, `tanggal_meninggal`, `jam_meninggal`, `bertempat_di`, `keperluan`, `penandatangan`, `opsi_ttd`, `ttd`, `status`, `pesan_admin`) VALUES
-(199, 11, '6206092910010001', 'MUHAMMAD AINUL YAKIN', 'Islam', NULL, 'surat_keterangan_tidak_mampu', '081352009802', 'L', 'Kampung Melayu', '2001-10-29', 'Mahasiswa', NULL, 'desa kampung melayu, RT 002, RW 001', '8c8b6eed4d119dfb83645434be3a00ab.jpg', 0, '2023-07-12 06:28:53', 'INDONESIA', 'Beasiswa', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'MARKASI', 'asli', NULL, 'Menunggu Persetujuan', ''),
-(201, 11, '131143145324', 'vaajjavavavd', 'Islam', NULL, 'surat_keterangan_tidak_mampu', '08152009802', 'L', 'qeq21121212', '2000-10-20', 'adadada', NULL, 'dadasdwd', '4984d5e6939d3025e0954695534fb3c6.jpg', 0, '2023-07-12 06:32:55', 'INDONESIA', 'dadqwdqwqw', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'MARKASI', 'scan', NULL, 'Menunggu Persetujuan', ''),
-(206, 22, '12345678', 'Testing', 'Islam', 'SUDAH MENIKAH', 'surat_keterangan_domisili', '2341354', 'L', 'Tes', '2023-07-10', 'Programmer', NULL, 'tes', '863adfb71c9c08619ae70fb19cd028e3.png', 0, '2023-07-20 06:07:32', 'Indonesia', 'sadasda', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'MARKASI', 'scan', '9bf7b9212e57e0569728bd278320fd96.png', 'Di Setujui', ''),
-(207, 22, '12345678', 'Testing', 'Islam', 'SUDAH MENIKAH', 'surat_keterangan_tidak_mampu', '21231313212', 'L', 'Tes', '2023-07-10', 'Programmer', NULL, 'tes', 'd60178ffc4602748790082bd8d48304e.png', 0, '2023-07-21 07:38:34', 'Indonesia', 'tes', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'MARKASI', 'scan', 'cfeffc91d5c7afbd12e34fe2e717dbb5.png', 'Di Setujui', ''),
-(208, 22, '12345678', 'Testing', 'Islam', 'SUDAH MENIKAH', 'surat_keterangan_kematian', '021231313212', 'L', 'Tes', '2023-07-10', 'Programmer', NULL, 'tes', '3df85c66994bdf82d3f4fbc6622d10b0.png', 0, '2023-07-21 07:55:15', 'Indonesia', NULL, 'ter', 'ret', 'Rabu', '2001-09-08', '09', 'jl', NULL, 'MARKASI', 'scan', '84aeaa95ce6d74876db56536926527a1.png', 'Di Setujui', ''),
-(209, 22, '12345678', 'Testing', 'Islam', 'SUDAH MENIKAH', 'surat_keterangan_kelahiran', '021231313212', 'L', 'Tes', '2023-07-10', 'Programmer', NULL, 'tes', '8962e0952116c1cdfae1708d8eed3cc5.png', 0, '2023-07-21 08:05:48', 'Indonesia', NULL, 'ter', 'ret', NULL, NULL, NULL, NULL, NULL, 'MARKASI', 'scan', 'e717f7ed58d3b61f21f56e197c5c6af7.png', 'Di Setujui', ''),
-(210, 22, '12345678', 'Testing', 'Islam', 'SUDAH MENIKAH', 'surat_keterangan_penghasilan_orang_tua', '021231313212', 'L', 'Tes', '2023-07-10', 'Programmer', NULL, 'tes', '61c0ff119930bf5b25fb41af2c1d1d53.png', 0, '2023-07-21 08:11:35', 'Indonesia', 'ret', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'MARKASI', 'scan', '15708c722a4781a1d42d88206ec904fc.png', 'Di Setujui', ''),
-(211, 22, '12345678', 'Testing', 'Islam', 'SUDAH MENIKAH', 'surat_pengantar_berkelakuan_baik', '021231313212', 'L', 'Tes', '2023-07-10', 'Programmer', NULL, 'tes', '200a74a8f69f27f61bfd7ef6332d28c7.png', 0, '2023-07-21 08:18:20', 'Indonesia', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'pop', 'MARKASI', 'scan', '205c6ad64ead6c24c13123a46d7ea346.png', 'Di Setujui', ''),
-(212, 22, '12345678', 'Testing', 'Islam', 'SUDAH MENIKAH', 'surat_pernyataan_belum_menikah', '021231313212', 'L', 'Tes', '2023-07-10', 'Programmer', NULL, 'tes', 'a99b08a57499f67659396deeaf9aba10.png', 0, '2023-07-21 08:27:07', 'Indonesia', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'kulukulu', 'MARKASI', 'scan', 'fd45366ddede271c11281bfbfa58baf3.png', 'Di Setujui', ''),
-(213, 22, '12345678', 'Testing', 'Islam', 'SUDAH MENIKAH', 'surat_keterangan_tidak_mampu', '021231313212', 'L', 'Tes', '2023-07-10', 'Programmer', NULL, 'tes', '7a803d7500bb742b4b7e4c793ba77432.png', 0, '2023-07-21 08:33:34', 'Indonesia', 'pop', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'MARKASI', 'scan', '5215531635bcf7857d1a719d5d694275.png', 'Di Setujui', 'cek'),
-(214, 22, '12345678', 'Testing', 'Islam', 'SUDAH MENIKAH', 'surat_keterangan_tidak_mampu', '021231313212', 'L', 'Tes', '2023-07-10', 'Programmer', NULL, 'tes', 'b0d8739dbbd89c3f2f7b47f6c7f5a057.png', 0, '2023-07-21 09:06:19', 'Indonesia', 'sasdasd', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'MARKASI', 'asli', NULL, 'Di Setujui', ''),
-(216, 22, '12345678', 'Testing', 'Islam', 'SUDAH MENIKAH', 'surat_keterangan_tidak_mampu', '2323123', 'L', 'Tes', '2023-07-10', 'Programmer', NULL, 'tes', 'e032ee348463a947b4d1923d46ea6eec.png', 0, '2023-07-21 09:45:18', 'Indonesia', 'dsaasdas', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'MARKASI', 'asli', NULL, 'Di Setujui', ''),
-(217, 22, '12345678', 'Testing', 'Islam', 'SUDAH MENIKAH', 'surat_keterangan_tidak_mampu', '21312312', 'L', 'Tes', '2023-07-10', 'Programmer', NULL, 'tes', '6346e458522e75ffbf6dadeeb901f8ce.png', 0, '2023-07-21 09:45:56', 'Indonesia', ' sdadsa', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'MARKASI', 'scan', NULL, 'Di Tolak', '');
+(223, 25, '6206092910010001', 'Muhammad Ainul Yakin', 'Islam', 'BELUM MENIKAH', 'surat_keterangan_penghasilan_orang_tua', '081352009802', 'L', 'Kampung Melayu', '2001-10-29', 'Mahasiswa', NULL, 'Desa Kampung Melayu, RT 002, RW 001', '78b5118801f07f2204f1e2372e7e1c07.jpg', 0, '2023-07-31 23:56:02', 'Indonesia', 'Pengajuan Beasiswa', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'MARKASI', 'scan', '7feac54aae5870503721de626718c190.png', 'Di Setujui', 'Surat Anda Telah Di Buat'),
+(224, 25, '6206092910010001', 'Muhammad Ainul Yakin', 'Islam', 'BELUM MENIKAH', 'surat_keterangan_tidak_mampu', '081352009802', 'L', 'Kampung Melayu', '2001-10-29', 'Mahasiswa', NULL, 'Desa Kampung Melayu, RT 002, RW 001', '78b5118801f07f2204f1e2372e7e1c07.jpg', 0, '2023-08-01 00:04:34', 'Indonesia', 'besasiswa', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'MARKASI', 'scan', 'c2cf52dd9b12e7be0019cf8abbcca01a.png', 'Di Setujui', ''),
+(225, 25, '6206092910010001', 'Muhammad Ainul Yakin', 'Islam', 'BELUM MENIKAH', 'surat_pengantar_berkelakuan_baik', '081352009802', 'L', 'Kampung Melayu', '2001-10-29', 'Mahasiswa', NULL, 'Desa Kampung Melayu, RT 002, RW 001', '78b5118801f07f2204f1e2372e7e1c07.jpg', 0, '2023-08-01 00:12:05', 'Indonesia', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Persyaratan Pembuatan SKCK', 'MARKASI', 'scan', 'd962045f9e72354aa9feb338bcf4805d.png', 'Di Setujui', ''),
+(226, 25, '6206092910010001', 'Muhammad Ainul Yakin', 'Islam', 'BELUM MENIKAH', 'surat_keterangan_domisili', '081352009802', 'L', 'Kampung Melayu', '2001-10-29', 'Mahasiswa', NULL, 'Desa Kampung Melayu, RT 002, RW 001', '78b5118801f07f2204f1e2372e7e1c07.jpg', 0, '2023-08-01 00:13:19', 'Indonesia', 'KERJA\r\n', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'MARKASI', 'scan', 'ff864c89a504a014ebad23dcb5462a5d.png', 'Di Setujui', ''),
+(227, 25, '6206092910010001', 'Muhammad Ainul Yakin', 'Islam', 'BELUM MENIKAH', 'surat_keterangan_kematian', '081352009802', 'L', 'Kampung Melayu', '2001-10-29', 'Mahasiswa', NULL, 'Desa Kampung Melayu, RT 002, RW 001', '78b5118801f07f2204f1e2372e7e1c07.jpg', 0, '2023-08-01 00:14:45', 'Indonesia', NULL, 'mami', 'ayah', 'Senin', '2020-12-07', '19:00', 'RT01', NULL, 'MARKASI', 'scan', '975f1de070f0dca23bf2a61830f63604.png', 'Di Setujui', ''),
+(228, 25, '6206092910010001', 'Muhammad Ainul Yakin', 'Islam', 'BELUM MENIKAH', 'surat_keterangan_kelahiran', '081352009802', 'L', 'Kampung Melayu', '2001-10-29', 'Mahasiswa', NULL, 'Desa Kampung Melayu, RT 002, RW 001', '78b5118801f07f2204f1e2372e7e1c07.jpg', 0, '2023-08-01 00:14:58', 'Indonesia', NULL, 'mami', 'ayah', NULL, NULL, NULL, NULL, NULL, 'MARKASI', 'scan', '13814e7016196ffaf9578c10cbebd362.png', 'Di Setujui', ''),
+(229, 25, '6206092910010001', 'Muhammad Ainul Yakin', 'Islam', 'BELUM MENIKAH', 'surat_keterangan_penghasilan_orang_tua', '081352009802', 'L', 'Kampung Melayu', '2001-10-29', 'Mahasiswa', NULL, 'Desa Kampung Melayu, RT 002, RW 001', '78b5118801f07f2204f1e2372e7e1c07.jpg', 0, '2023-08-01 00:15:29', 'Indonesia', 'KERJA', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'MARKASI', 'scan', '86fbfde9f6034c711132d2691953c956.png', 'Di Setujui', ''),
+(230, 25, '6206092910010001', 'Muhammad Ainul Yakin', 'Islam', 'BELUM MENIKAH', 'surat_pernyataan_belum_menikah', '081352009802', 'L', 'Kampung Melayu', '2001-10-29', 'Mahasiswa', NULL, 'Desa Kampung Melayu, RT 002, RW 001', '78b5118801f07f2204f1e2372e7e1c07.jpg', 0, '2023-08-01 00:15:44', 'Indonesia', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'ZGHVHGA', 'MARKASI', 'scan', '63c2272c8762cd7d1c4eaa5e5f780854.png', 'Di Setujui', ''),
+(231, 26, '6202991910010000', 'RISKI PELU', 'Islam', 'BELUM MENIKAH', 'surat_keterangan_domisili', '081352009802', 'L', 'Sampit', '2000-10-10', 'Mahasiswa', NULL, 'Desa Kampung Melayu, RT 002', '0904eec47b76014600db81c54dcb741d.jpg', 0, '2023-08-02 22:01:30', 'Indonesia', 'pindah agama', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'MARKASI', 'asli', NULL, 'Di Setujui', 'Silahkan Ambil Ke Kantor Sekarang');
 
 -- --------------------------------------------------------
 
@@ -263,7 +261,8 @@ INSERT INTO `tb_gallery` (`id`, `judul`, `tanggal`, `gambar`, `albumid`, `userid
 (10, 'Pasar Rakyat Desa Kampung Melayu', '2023-07-07 02:36:11', '290dabe742e8e4699949f2f706985fdf.jpeg', 8, 0),
 (11, 'desa', '2023-07-07 08:43:49', 'a5b0e3225039cc1c1ea5dd967493dcc2.jpeg', 8, 0),
 (12, 'Sambutan Kepala Desa Kampung Melayu', '2023-07-07 09:06:50', '444fc20ba910b81fedce6421ca8c6b94.jpeg', 8, 0),
-(13, 'foto', '2023-07-07 09:11:17', '253ff25185b27573d87cc67741bb8335.jpeg', 8, 0);
+(13, 'foto', '2023-07-07 09:11:17', '253ff25185b27573d87cc67741bb8335.jpeg', 8, 0),
+(14, 'gedung', '2023-07-30 00:49:15', '052cd4360d7e7fcdee2bd3b206526d28.jpeg', 9, 11);
 
 -- --------------------------------------------------------
 
@@ -399,9 +398,7 @@ INSERT INTO `tb_pegawai` (`id`, `name`, `position`, `photo`) VALUES
 (2, 'Guntur Setiawan', 'Sekertaris Desa', 'c7856006aadb20ae156fc65a6e82539e.png'),
 (3, 'Karyadie', 'Kaur Perencanaan', '7a0266cd1bb38992db94c048b74822eb.png'),
 (4, 'Rusdiani Agustin', 'Kaur Keuangan', 'bc5e5dd3fbeba2e37df630dc8e249d3a.png'),
-(5, 'Tuah Catur Wibowo', 'Kasi Kesejahteraan dan Pelayanan', 'a86c72e8e6ad576d5b8dea76c3408ea2.png'),
-(6, 'Fathur Rahman', 'Kasi Pemerintahan', '8f5b4073feffaadab00b8dd4548843b1.png'),
-(7, 'LUKMAN BAHTIAR', 'Kepala Desa', 'dcf8a223facaab35b131f01eca49bede.png');
+(12, 'Fathur Rahman', 'Kasi Pemerintahan', 'ee76ed71390e10c06d9e322ea2e12e6b.png');
 
 -- --------------------------------------------------------
 
@@ -430,7 +427,9 @@ CREATE TABLE `tb_penduduk` (
 --
 
 INSERT INTO `tb_penduduk` (`id`, `nik`, `nama`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `alamat`, `agama`, `status`, `pekerjaan`, `kewarganegaraan`, `no_hp`, `foto_ktp`) VALUES
-(4, '12345678', 'Testing', 'Tes', '2023-07-10', 'L', 'tes', 'Islam', 'SUDAH MENIKAH', 'Programmer', 'Indonesia', '088811452', '0a84c02754498a17ccecb7c56826e04e.png');
+(9, '6206092910010001', 'Muhammad Ainul Yakin', 'Kampung Melayu', '2001-10-29', 'L', 'Desa Kampung Melayu, RT 002, RW 001', 'Islam', 'BELUM MENIKAH', 'Mahasiswa', 'Indonesia', '081352009802', '919477e5c8a6d2673ef29980265920f7.jpg'),
+(10, '6202991910010000', 'RISKI PELU', 'Sampit', '2000-10-10', 'L', 'Desa Kampung Melayu, RT 002', 'Islam', 'BELUM MENIKAH', 'Mahasiswa', 'Indonesia', '081352009802', '0904eec47b76014600db81c54dcb741d.jpg'),
+(11, '6206092910010002', 'sigito', 'Kampung Melayu', '2000-02-09', 'L', 'Desa Kampung Melayu, RT 002', 'Islam', 'BELUM MENIKAH', 'Belum Bekerja', 'Indonesia', '08282828282', '');
 
 -- --------------------------------------------------------
 
@@ -448,18 +447,6 @@ CREATE TABLE `tb_pengaduan_masyarakat` (
   `kategori_laporan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `tb_pengaduan_masyarakat`
---
-
-INSERT INTO `tb_pengaduan_masyarakat` (`id`, `user_penduduk`, `judul`, `isi`, `tgl_kejadian`, `lokasi_kejadian`, `kategori_laporan`, `created_at`) VALUES
-(1, 0, 'fsd', 'fsdfsdf', '2023-06-09', 'fsdfasf', 'Agama', '2023-06-21 08:10:03'),
-(2, 0, 'KERUSAKAN JALAN', 'mdhsdnskfsbff', '2023-07-15', 'dmdsnsfksfksbf', 'Kesehatan', '2023-07-08 03:20:47'),
-(3, 0, 'KERUSAKAN JALAN', '211212121', '2023-10-20', 'Rt 03, RW, 01, Di Rumah radi', 'Topik Lainnya', '2023-07-08 03:26:51'),
-(4, 0, 'pengadaan lomba 17 agustus', 'agar pihak desa dapat melaksanakan kegiatan tersebut', '2023-07-12', 'Rt 03, RW, 01, ', 'Topik Lainnya', '2023-07-12 09:16:42'),
-(5, 0, 'fuqfwtfqyfw', 'sgyaguyaguys', '2023-07-29', 'ksayjjahsas', 'Topik Lainnya', '2023-07-14 01:01:48'),
-(6, 22, 'tes', 'weqweqw', '2011-09-09', 'sda', 'Kesehatan', '2023-07-21 09:06:04');
 
 -- --------------------------------------------------------
 
@@ -1135,7 +1122,15 @@ INSERT INTO `tb_pengunjung` (`id`, `tanggal`, `ip`, `perangkat`) VALUES
 (1301, '2023-07-23 06:59:32', '127.0.0.1', 'Chrome'),
 (1302, '2023-07-23 18:26:42', '127.0.0.1', 'Chrome'),
 (1303, '2023-07-23 18:26:42', '127.0.0.1', 'Chrome'),
-(1304, '2023-07-27 03:39:15', '127.0.0.1', 'Chrome');
+(1304, '2023-07-27 03:39:15', '127.0.0.1', 'Chrome'),
+(1305, '2023-07-27 16:39:21', '::1', 'Chrome'),
+(1306, '2023-07-28 05:44:03', '::1', 'Chrome'),
+(1307, '2023-07-29 04:22:51', '::1', 'Chrome'),
+(1308, '2023-07-29 17:00:49', '::1', 'Chrome'),
+(1309, '2023-07-31 04:54:11', '::1', 'Chrome'),
+(1310, '2023-08-01 04:36:14', '::1', 'Chrome'),
+(1311, '2023-08-03 02:16:35', '::1', 'Chrome'),
+(1312, '2023-08-10 08:00:54', '::1', 'Chrome');
 
 -- --------------------------------------------------------
 
@@ -1291,11 +1286,9 @@ CREATE TABLE `tb_user_penduduk` (
 --
 
 INSERT INTO `tb_user_penduduk` (`id`, `nama_lengkap`, `no_ktp`, `token`, `siapa_nama_sahabat_anda`, `dimana_anda_lahir`, `password`) VALUES
-(11, 'Muhammad Ainul Yakin', '6206092910010001', '8G6ZUHCS1D4VMBJOT3Q507WIN', 'riski', 'kampung melayu', '$2y$10$jnoVUxiG1T2kr1fHP4ypbuYJNZ.fAhKqgdzL8zcVICjUM/GFFlVNC'),
-(12, 'yakin', '6206092910010002', '', 'sampit', 'kamel', '$2y$10$gTP5GZ1RteDY/TmqTV7q/eIq4Q20Kr/VLoeQ6f6jROeP7IYgst9ly'),
-(13, 'kay', '6206092910010001', '', 'rahmat', 'sampit', '$2y$10$QFvO62V6UHUrXE5aSPk0C.KdAneadUz5jcXj6Xbal9THAbaLNBfr.'),
-(16, 'kin', '1234567890111212', 'G59ZWBE42JSFVO1MD0C3KNXUY', 'risky', 'sampit', ''),
-(22, 'Testing', '12345678', '', 'tes', 'kampung melayu', '$2y$10$DnjwRb.G/FRZKGbFmtIo/u8R.8wL/JWxTQvVSLlX9ZRX8yOKKIte.');
+(25, 'Muhammad Ainul Yakin', '6206092910010001', '', 'riski', 'sampit', '$2y$10$jj3bsHarJKSm8Dq3PSA3sOZA85.xwc4faviafBVUAAdo9ntPtXsui'),
+(26, 'RISKI PELU', '6202991910010000', 'YGKWSM5UQD132T6AHJ4NPI0OF', 'yakin', 'sampit', '$2y$10$Bvj67ZNKoqJevqaexS6J3eajqIsAdU37cq4Rcarxj9gvqNoQ7ElmW'),
+(27, 'sigito', '6206092910010002', '', 'radi', 'cempaga', '$2y$10$yn7gKGLcgapbgqMKzDzJG.n/elS/c/X63jlnaJEWCtUPJm.YLrRsC');
 
 --
 -- Indexes for dumped tables
@@ -1485,7 +1478,7 @@ ALTER TABLE `tb_agenda`
 -- AUTO_INCREMENT for table `tb_album`
 --
 ALTER TABLE `tb_album`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tb_apbdes`
@@ -1521,13 +1514,13 @@ ALTER TABLE `tb_files`
 -- AUTO_INCREMENT for table `tb_form`
 --
 ALTER TABLE `tb_form`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=221;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=232;
 
 --
 -- AUTO_INCREMENT for table `tb_gallery`
 --
 ALTER TABLE `tb_gallery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `tb_identitas`
@@ -1569,19 +1562,19 @@ ALTER TABLE `tb_menu`
 -- AUTO_INCREMENT for table `tb_pegawai`
 --
 ALTER TABLE `tb_pegawai`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tb_penduduk`
 --
 ALTER TABLE `tb_penduduk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `tb_pengaduan_masyarakat`
 --
 ALTER TABLE `tb_pengaduan_masyarakat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tb_pengaturan_layanan_surat`
@@ -1599,7 +1592,7 @@ ALTER TABLE `tb_pengumuman`
 -- AUTO_INCREMENT for table `tb_pengunjung`
 --
 ALTER TABLE `tb_pengunjung`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1305;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1313;
 
 --
 -- AUTO_INCREMENT for table `tb_potensi`
@@ -1641,7 +1634,7 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT for table `tb_user_penduduk`
 --
 ALTER TABLE `tb_user_penduduk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
